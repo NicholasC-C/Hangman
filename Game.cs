@@ -33,18 +33,22 @@ namespace Hangman
         {
             while (wrong_guesses <= 6)
             {
+                Console.Clear();
                 Visual_Hangman.display_hangman(wrong_guesses);
                 display_letters();
                 guess_letter();
 
-                Console.Clear();
                 if (check_if_won())
                 {
+                    Console.Clear();
+                    Visual_Hangman.display_hangman(wrong_guesses);
                     Console.WriteLine("You won!");
                     break;
                 }
                 if (wrong_guesses >= 6)
                 {
+                    Console.Clear();
+                    Visual_Hangman.display_hangman(wrong_guesses);
                     Console.WriteLine("You lost...");
                     break;
                 }
@@ -58,7 +62,7 @@ namespace Hangman
             {
                 int x_pos = (1 + i) * 2;
                 letter_placement_positions.Add(x_pos);
-                Console.SetCursorPosition(x_pos, 8);
+                Console.SetCursorPosition(x_pos, 25);
                 if (letters_guessed[i] == true)
                     Console.WriteLine(word[i].ToString());
                 else

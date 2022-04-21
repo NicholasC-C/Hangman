@@ -43,11 +43,15 @@ namespace Hangman
                 Console.Clear();
                 if (check_if_won())
                 {
+                    Console.Clear();
+                    Visual_Hangman.display_hangman(wrong_guesses);
                     Console.WriteLine($"{player2_name} won!");
                     break;
                 }
                 if (wrong_guesses >= 6)
                 {
+                    Console.Clear();
+                    Visual_Hangman.display_hangman(wrong_guesses);
                     Console.WriteLine($"{player1_name} won!");
                     break;
                 }
